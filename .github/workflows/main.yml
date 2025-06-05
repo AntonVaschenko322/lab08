@@ -76,5 +76,5 @@ jobs:
           name: Release v1.${{ github.run_number }}
           files: |
             artifacts/linux/*.deb 
-            log.txt
+            logs/log.txt
       
