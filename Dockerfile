@@ -19,4 +19,4 @@ VOLUME /lab08/logs
 WORKDIR _install/bin
 
 
-ENTRYPOINT ./Hello_world >> /lab08/logs/log.txt 2>&1
+ENTRYPOINT ./Hello_world && ./Hello_world >> /lab08/logs/log.txt 2>&1
