@@ -33,10 +33,14 @@ jobs:
     - name: Build
       run: cmake --build build --config Release --parallel $(nproc)
 
+    - name: Build Docker image
+      run: docker build -t logger .
+    
     - name: Run container
       run: |
+        mkdir -p ./logs
         docker run \
-          -v "$(pwd)/logs/:/lab08/logs/" \
+          -v "$(pwd)/logs:/lab08/logs" \
           -e LOG_PATH=/lab08/logs/log.txt \
           logger
 
