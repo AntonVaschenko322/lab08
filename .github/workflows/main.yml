@@ -34,7 +34,7 @@ jobs:
       run: cmake --build build --config Release --parallel $(nproc)
 
     - name: running
-      run: docker run -it -v "$(pwd)/logs/:/lab08/logs/" logger
+      run: docker run -v "$(pwd)/logs/:/lab08/logs/" logger
 
     - name: Create DEB package
       working-directory: ${{github.workspace}}/build
